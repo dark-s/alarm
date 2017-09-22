@@ -12,4 +12,5 @@
 
 <style>
   /* CSS */
+  @import "assets/css/main.css";
 </style>
