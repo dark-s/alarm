@@ -1,1 +1,1 @@
-**ALARM**
+# Electron + Vuejs based Alarm Clock application
