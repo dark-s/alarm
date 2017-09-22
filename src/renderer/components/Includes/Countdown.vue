@@ -45,7 +45,6 @@
         now: Math.trunc((new Date()).getTime() / 1000),
         date: null,
         diff: 0,
-        alarm: {},
         stop: false
       }
     },

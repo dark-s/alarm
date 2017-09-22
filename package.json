@@ -59,6 +59,7 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "fontawesome": "^4.7.2",
     "fs-extra": "^4.0.2",
+    "howler": "^2.0.4",
     "moment": "^2.18.1",
     "vue": "^2.3.3",
     "vue-bootstrap-datetimepicker": "^3.0.0",

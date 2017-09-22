@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="btn-group col-sm-12 text-center">
-        <button class="btn btn-default" @click="startAlarm()" style="float: none">Завести будильник</button>
+        <button class="btn btn-default" :disabled="(new Date(date).getTime() < new Date().getTime())" @click="startAlarm()" style="float: none">Завести будильник</button>
       </div>
     </div>
     <countdown :deadline="date" :audio="audioPath" v-else></countdown>
@@ -43,8 +43,9 @@
       return {
         active: false,
         date: new Date(),
-        files: fs.readdirSync('audio'),
+        files: '',
         file: '',
+        valid: false,
         dateConfig: {
           locale: moment.locale('ru')
         }
@@ -56,13 +57,13 @@
     },
     computed: {
       audioPath() {
-        return 'audio/' + this.file
+        let audioPath = path.resolve('audio')
+        return  path.join(audioPath, this.file)
       }
     },
-    watch: {
-    },
     mounted() {
-      console.log(this.files)
+      if(fs.existsSync('audio'))
+        this.files = fs.readdirSync('audio')
     },
     methods: {
       updateAudioList() {
